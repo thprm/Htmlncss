@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    padding: 20px 10px;
+}
+
+nav{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo{
+    width: 150px;
+    cursor:pointer;
+    margin-left: 100px;
+}
+
+nav .menu-img{
+    width:50px;
+    cursor: pointer;
+    margin-right: 100px;
+}
+nav ul{
+    flex: 1;
+    text-align: right;
+    margin-right: 150px;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px 30px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    position: relative;
+    padding: 10px;
+}
+
+nav ul li a::before {
+    content:''; 
+    width: 100%;
+    height: 0px;
+    background:#d9f688;
+    position: absolute;
+    z-index:-1;
+    left:0;
+    bottom:-5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition:height 0.5s;
+}
+
+nav ul li a:hover::before {
+    height: 85px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col{
+    flex-basis: 50%;
+    position:relative;    
+}
+
+.feature-img{
+    width: 80%;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(30px); /* Start slightly lower */
+    animation: moveup 0.8s ease forwards;
+    animation-delay: 1.5s; /* Delayed start for feature image */
+    
+}
+.feature-img.anim{
+    animation-delay: 1.5s;
+}
+
+.thumbnail-img{
+    width:280px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    border-radius: 8px;
+    box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px); /* Start slightly lower */
+    animation: moveup 0.8s ease forwards;
+    animation-delay: 1.7s; /* Delayed start for thumbnail image */
+    
+}
+.thumbnail-img.anim{
+    animation-delay: 1.7s;
+}
+
+.col h1{
+    
+    margin-top: 180px;
+    font-size:  40px;
+    font-weight: 600;
+    padding-left: 100px;
+    animation-delay: 0.5s;
+}
+.col a{
+    text-decoration: none;
+    padding: 18px 50px;
+    border-radius: 30px;
+    background: #d9f688;
+    display:inline-block;
+    color:#000;
+    font-weight: 700;
+    margin-top:70px;
+    margin-left: 90px;
+    box-shadow: 5px 8px 10px rgba(0,0,0,0.1);
+    animation-delay: 1s;
+    transition: all 0.3s ease;
+}
+
+.col a:hover{
+    background-color:#f5d142;
+}
+
+.anim{
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.5s linear forwards;
+
+}
+
+@keyframes moveup{
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+}
